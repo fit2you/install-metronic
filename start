@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+
+require 'fileutils'
+
+if ARGV.count != 2
+  puts "usage: start METRONIC DIRECTORY RAILS APP DIRECTORY"
+  puts "install metronic theme into the specified rails app"
+
+  exit 1
+end
+
+metronic_directory = ARGV[0]
+rails_app_directory = ARGV[1]
+
+if !Dir.exists?(metronic_directory)
+  puts "#{metronic_directory} doesn't exist"
+  exit 1
+end
+
+if !Dir.exists?(rails_app_directory)
+  puts "#{rails_app_directory} doesn't exist"
+  exit 1
+end
+
+puts "copy bootstrap"
+
+FileUtils.cp(File.join(metronic_directory, 'theme/sass', 'bootstrap.scss'), File.join(rails_app_directory, 'vendor/assets/stylesheets'))
+FileUtils.cp_r(File.join(metronic_directory, 'theme/sass/bootstrap'), File.join(rails_app_directory, 'vendor/assets/stylesheets/'))
+
+FileUtils.mkdir(File.join(rails_app_directory, 'vendor/assets/stylesheets/global/'))
+FileUtils.cp(File.join(metronic_directory, 'theme/sass/global', '_variables.scss'), File.join(rails_app_directory, 'vendor/assets/stylesheets/global/'))
+FileUtils.cp(File.join(metronic_directory, 'theme/sass/global', '_colors.scss'), File.join(rails_app_directory, 'vendor/assets/stylesheets/global/'))
+FileUtils.cp(File.join(metronic_directory, 'theme/sass/global', '_bootstrap-override.scss'), File.join(rails_app_directory, 'vendor/assets/stylesheets/global/'))
