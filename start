@@ -90,3 +90,11 @@ puts "darkblue"
 FileUtils.cp(
   File.join(metronic_directory, 'theme/assets/layouts/layout/css/themes/', 'darkblue.css'), 
   File.join(rails_app_directory, 'vendor/assets/stylesheets/'))
+
+puts "Javascripts"
+
+puts "** bootstrap"
+
+FileUtils.cp(
+  File.join(metronic_directory, 'theme/assets/global/plugins/bootstrap/js/', 'bootstrap.js'), 
+  File.join(rails_app_directory, 'vendor/assets/javascripts/'))
