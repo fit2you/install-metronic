@@ -22,12 +22,8 @@ if !Dir.exists?(rails_app_directory)
   exit 1
 end
 
-puts "copy bootstrap"
+puts "copy Admin 1 rounded dark blue theme"
 
-FileUtils.cp(File.join(metronic_directory, 'theme/sass', 'bootstrap.scss'), File.join(rails_app_directory, 'vendor/assets/stylesheets'))
-FileUtils.cp_r(File.join(metronic_directory, 'theme/sass/bootstrap'), File.join(rails_app_directory, 'vendor/assets/stylesheets/'))
-
-FileUtils.mkdir(File.join(rails_app_directory, 'vendor/assets/stylesheets/global/'))
-FileUtils.cp(File.join(metronic_directory, 'theme/sass/global', '_variables.scss'), File.join(rails_app_directory, 'vendor/assets/stylesheets/global/'))
-FileUtils.cp(File.join(metronic_directory, 'theme/sass/global', '_colors.scss'), File.join(rails_app_directory, 'vendor/assets/stylesheets/global/'))
-FileUtils.cp(File.join(metronic_directory, 'theme/sass/global', '_bootstrap-override.scss'), File.join(rails_app_directory, 'vendor/assets/stylesheets/global/'))
+FileUtils.cp(
+  File.join(metronic_directory, 'theme/assets/global/plugins/font-awesome/css', 'font-awesome.min.css'), 
+  File.join(rails_app_directory, 'vendor/assets/stylesheets/'))
