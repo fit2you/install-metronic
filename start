@@ -24,6 +24,14 @@ end
 
 puts "copy Admin 1 rounded dark blue theme"
 
+puts "copy font-awesome"
+
 FileUtils.cp(
-  File.join(metronic_directory, 'theme/assets/global/plugins/font-awesome/css', 'font-awesome.min.css'), 
+  File.join(metronic_directory, 'theme/assets/global/plugins/font-awesome/css', 'font-awesome.css'), 
   File.join(rails_app_directory, 'vendor/assets/stylesheets/'))
+
+FileUtils.cp_r(
+  File.join(metronic_directory, 'theme/assets/global/plugins/font-awesome/fonts/'),
+  File.join(rails_app_directory, 'vendor/assets/stylesheets/fonts/'))
+
+
