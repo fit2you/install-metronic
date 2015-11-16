@@ -15,6 +15,7 @@
  *= require simple-line-icons
  *= require bootstrap
  *= require uniform.default
+ *= require bootstrap-switch
  *
  *= require_tree .
  *= require_self
