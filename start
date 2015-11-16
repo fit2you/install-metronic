@@ -79,3 +79,8 @@ FileUtils.cp(
   File.join(metronic_directory, 'theme/assets/global/css/', 'plugins.css'), 
   File.join(rails_app_directory, 'vendor/assets/stylesheets/'))
 
+puts "layout 1"
+
+FileUtils.cp(
+  File.join(metronic_directory, 'theme/assets/layouts/layout/css/', 'layout.css'), 
+  File.join(rails_app_directory, 'vendor/assets/stylesheets/'))
