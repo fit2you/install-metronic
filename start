@@ -32,6 +32,21 @@ FileUtils.cp(
 
 FileUtils.cp_r(
   File.join(metronic_directory, 'theme/assets/global/plugins/font-awesome/fonts/'),
-  File.join(rails_app_directory, 'vendor/assets/stylesheets/fonts/'))
+  File.join(rails_app_directory, 'vendor/assets/stylesheets/'))
+
+font_awesome_css = File.read(File.join(metronic_directory, 'theme/assets/global/plugins/font-awesome/css', 'font-awesome.css'))
+File.open(File.join(metronic_directory, 'theme/assets/global/plugins/font-awesome/css', 'font-awesome.css'), 'w') do |f|
+  f.write(font_awesome_css.gsub("url('../fonts", "url('fonts"))
+end
+
+puts "copy simple line icons"
+
+FileUtils.cp(
+  File.join(metronic_directory, 'theme/assets/global/plugins/simple-line-icons/', 'simple-line-icons.css'), 
+  File.join(rails_app_directory, 'vendor/assets/stylesheets/'))
+
+FileUtils.cp_r(
+  File.join(metronic_directory, 'theme/assets/global/plugins/simple-line-icons/fonts/'),
+  File.join(rails_app_directory, 'vendor/assets/stylesheets/'))
 
 
