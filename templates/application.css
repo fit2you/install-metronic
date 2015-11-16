@@ -18,6 +18,8 @@
  *= require bootstrap-switch
  *= require components-rounded
  *= require plugins
+ *= require layout
+ *= require darkblue
  *
  *= require_tree .
  *= require_self
