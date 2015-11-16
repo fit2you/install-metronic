@@ -54,3 +54,10 @@ puts "** bootstrap"
 FileUtils.cp(
   File.join(metronic_directory, 'theme/assets/global/plugins/bootstrap/css', 'bootstrap.css'), 
   File.join(rails_app_directory, 'vendor/assets/stylesheets/'))
+
+puts "** uniform"
+
+FileUtils.cp(
+  File.join(metronic_directory, 'theme/assets/global/plugins/uniform/css', 'uniform.default.css'), 
+  File.join(rails_app_directory, 'vendor/assets/stylesheets/'))
+
