@@ -12,6 +12,8 @@
  *
  * Metronic css
  *= require font-awesome
+ *= require simple-line-icons
+ *= require bootstrap
  *
  *= require_tree .
  *= require_self
