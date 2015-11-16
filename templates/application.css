@@ -16,6 +16,8 @@
  *= require bootstrap
  *= require uniform.default
  *= require bootstrap-switch
+ *= require components-rounded
+ *= require plugins
  *
  *= require_tree .
  *= require_self

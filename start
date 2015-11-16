@@ -66,3 +66,16 @@ puts "** bootstrap-switch"
 FileUtils.cp(
   File.join(metronic_directory, 'theme/assets/global/plugins/bootstrap-switch/css/', 'bootstrap-switch.css'), 
   File.join(rails_app_directory, 'vendor/assets/stylesheets/'))
+
+puts "rounded components"
+
+FileUtils.cp(
+  File.join(metronic_directory, 'theme/assets/global/css/', 'components-rounded.css'), 
+  File.join(rails_app_directory, 'vendor/assets/stylesheets/'))
+
+puts "plugins"
+
+FileUtils.cp(
+  File.join(metronic_directory, 'theme/assets/global/css/', 'plugins.css'), 
+  File.join(rails_app_directory, 'vendor/assets/stylesheets/'))
+
