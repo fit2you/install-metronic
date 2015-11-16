@@ -16,5 +16,7 @@
 
 // Metronic javascripts
 //= require bootstrap
+//= require js.cookie.min
+//= require bootstrap-hover-dropdown
 
 //= require_tree .
