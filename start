@@ -1,16 +1,33 @@
 #!/usr/bin/env ruby
 
 require 'fileutils'
+require 'optparse'
+require 'ostruct'
 
-if ARGV.count != 2
-  puts "usage: start METRONIC DIRECTORY RAILS APP DIRECTORY"
-  puts "install metronic theme into the specified rails app"
+options = OpenStruct.new
+options.theme_color = :default
+options.source = ""
+options.destination = ""
 
-  exit 1
-end
+OptionParser.new do |opts|
+  opts.banner = "Usage: start [options]"
+  
+  opts.on("-s", "--source DIRECTORY", "Metronic directory") do |v|
+    options.source = v
+  end
+  
+  opts.on("-d", "--destination DIRECTORY", "Rails application directory") do |v|
+    options.destination = v
+  end
 
-metronic_directory = ARGV[0]
-rails_app_directory = ARGV[1]
+  colors = [:default, :darkblue, :blue, :grey, :light, :light2]
+  opts.on("-c", "--theme-color [COLOR]", colors, "Theme color (#{colors.join(", ")})") do |v|
+    options.theme_color = v
+  end
+end.parse!
+
+metronic_directory = options.source
+rails_app_directory = options.destination
 
 if !Dir.exists?(metronic_directory)
   puts "#{metronic_directory} doesn't exist"
@@ -22,7 +39,7 @@ if !Dir.exists?(rails_app_directory)
   exit 1
 end
 
-puts "copy Admin 1 rounded dark blue theme"
+puts "copy Admin 1 rounded #{options.theme_color} theme"
 
 puts "** copy font-awesome"
 
@@ -88,7 +105,7 @@ FileUtils.cp(
 puts "darkblue"
 
 FileUtils.cp(
-  File.join(metronic_directory, 'theme/assets/layouts/layout/css/themes/', 'darkblue.css'), 
+  File.join(metronic_directory, 'theme/assets/layouts/layout/css/themes/', "#{options.theme_color}.css"), 
   File.join(rails_app_directory, 'vendor/assets/stylesheets/'))
 
 puts "Javascripts"
