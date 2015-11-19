@@ -8,6 +8,7 @@ options = OpenStruct.new
 options.theme_color = :default
 options.source = ""
 options.destination = ""
+options.plugins = []
 
 OptionParser.new do |opts|
   opts.banner = "Usage: start [options]"
@@ -24,6 +25,10 @@ OptionParser.new do |opts|
   opts.on("-c", "--theme-color [COLOR]", colors, "Theme color (#{colors.join(", ")})") do |v|
     options.theme_color = v
   end
+
+  opts.on("--plugins x,y,z", Array, "List of Plugins to copy (datatable)") do |list|
+    options.plugins = list
+  end  
 end.parse!
 
 metronic_directory = options.source
@@ -95,6 +100,31 @@ puts "plugins"
 FileUtils.cp(
   File.join(metronic_directory, 'theme/assets/global/css/', 'plugins.css'), 
   File.join(rails_app_directory, 'vendor/assets/stylesheets/'))
+
+options.plugins.each do |plugin|
+  if plugin == "datatable"
+    puts "** datatable"
+    FileUtils.cp(
+      File.join(metronic_directory, 'theme/assets/global/plugins/datatables/datatables.css'),
+      File.join(rails_app_directory, 'vendor/assets/stylesheets/'))
+
+    FileUtils.cp(
+      File.join(metronic_directory, 'theme/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css'),
+      File.join(rails_app_directory, 'vendor/assets/stylesheets/'))
+
+    FileUtils.cp(
+      File.join(metronic_directory, 'theme/assets/global/scripts/datatable.js'),
+      File.join(rails_app_directory, 'vendor/assets/javascripts/'))
+
+    FileUtils.cp(
+      File.join(metronic_directory, 'theme/assets/global/plugins/datatables/datatables.js'),
+      File.join(rails_app_directory, 'vendor/assets/javascripts/'))
+
+    FileUtils.cp(
+      File.join(metronic_directory, 'theme/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js'),
+      File.join(rails_app_directory, 'vendor/assets/javascripts/'))
+  end
+end
 
 puts "layout 1"
 

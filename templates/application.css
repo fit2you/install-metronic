@@ -16,10 +16,17 @@
  *= require bootstrap
  *= require uniform.default
  *= require bootstrap-switch
+ *
+ * Metronic optional plugins
+ *= require datatables
+ *= require datatables.bootstrap
+ *
  *= require components-rounded
  *= require plugins
  *= require layout
- *= require darkblue
+ *
+ * Metronic Theme color
+ *= require light2
  *
  *= require_tree .
  *= require_self

@@ -20,5 +20,12 @@
 //= require bootstrap-hover-dropdown
 //= require jquery.slimscroll
 //= require jquery.blockui.min
+//= require jquery.uniform
+//= require bootstrap-switch
+
+// Metronic Plugins
+//= require datatable
+//= require datatables
+//= require datatables.bootstrap
 
 //= require_tree .
