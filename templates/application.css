@@ -24,8 +24,8 @@
  * Fileupload
  *= require jquery.fancybox.css
  *= require blueimp-gallery.min
- *= jquery.fileupload
- *= jquery.fileupload-ui
+ *= require jquery.fileupload
+ *= require jquery.fileupload-ui
  *
  *= require components-rounded
  *= require plugins
