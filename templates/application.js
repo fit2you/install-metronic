@@ -24,10 +24,12 @@
 //= require bootstrap-switch
 
 // Metronic Plugins
+
 // Datatable
 //= require datatable
 //= require datatables
 //= require datatables.bootstrap
+
 // Fileupload
 //= require jquery.fancybox.pack
 //= require jquery.ui.widget
