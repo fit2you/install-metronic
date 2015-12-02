@@ -132,27 +132,14 @@ options.plugins.each do |plugin|
     puts "** fileupload"
 
     assets.copy_css(
-      "theme/assets/global/plugins/fancybox/source/jquery.fancybox.css",
-      "theme/assets/global/plugins/jquery-file-upload/blueimp-gallery/blueimp-gallery.min.css",      
       "theme/assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css",
-      "theme/assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css"
       )
     
     assets.copy_javascripts(
-        'theme/assets/global/plugins/fancybox/source/jquery.fancybox.pack.js',
-        'theme/assets/global/plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js',
-        'theme/assets/global/plugins/jquery-file-upload/js/vendor/tmpl.min.js',
-        'theme/assets/global/plugins/jquery-file-upload/js/vendor/load-image.min.js',
-        'theme/assets/global/plugins/jquery-file-upload/js/vendor/canvas-to-blob.min.js',
-        'theme/assets/global/plugins/jquery-file-upload/blueimp-gallery/jquery.blueimp-gallery.min.js',
-        'theme/assets/global/plugins/jquery-file-upload/js/jquery.iframe-transport.js',
-        'theme/assets/global/plugins/jquery-file-upload/js/jquery.fileupload.js',
-        'theme/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-process.js',
-        'theme/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-image.js',
-        'theme/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-audio.js',
-        'theme/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-video.js',
-        'theme/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-validate.js',
-        'theme/assets/global/plugins/jquery-file-upload/js/jquery.fileupload-ui.js')
+      'theme/assets/global/plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js',
+      'theme/assets/global/plugins/jquery-file-upload/js/jquery.iframe-transport.js',
+      'theme/assets/global/plugins/jquery-file-upload/js/jquery.fileupload.js'
+    )
   end
 end
 

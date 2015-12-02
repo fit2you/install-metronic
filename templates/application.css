@@ -21,12 +21,10 @@
  * Datatable
  *= require datatables
  *= require datatables.bootstrap
+ 
  * Fileupload
- *= require jquery.fancybox.css
- *= require blueimp-gallery.min
  *= require jquery.fileupload
- *= require jquery.fileupload-ui
- *
+ 
  *= require components-rounded
  *= require plugins
  *= require layout
